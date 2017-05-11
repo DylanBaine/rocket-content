@@ -9,6 +9,13 @@ class AboutMeController extends Controller
 {
 	public function store( Request $request)
 	{
+
+    public function __construct()
+    {
+        $this->middleware('auth')->except('show');
+    }
+
+		
 		if($request->hasFile('image')){
 
 			$file = $request->file('image');

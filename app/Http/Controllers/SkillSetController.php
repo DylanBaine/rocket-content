@@ -8,6 +8,14 @@ use File;
 
 class SkillSetController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth')->except('show');
+    }
+
+
+    
     public function store(Request $request)
     {
 

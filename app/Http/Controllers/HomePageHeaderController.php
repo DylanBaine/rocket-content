@@ -8,8 +8,16 @@ use File;
 
 class HomePageHeaderController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth')->except('show');
+    }
+
+
+    
     public function store(Request $request)
-    {    	
+    {
 
     	if($request->hasFile('image')){
             
