@@ -31,9 +31,7 @@ class PortfolioController extends Controller
     		$filename = "portfolio-image-" . time() . '.jpg';
 
     		Image::make($file)->save(public_path('portfolios/images/' . $filename));
-    	}else{
-            $filename = null;
-        }
+    	}
 
     	$portfolio = new \App\Portfolio;
 
@@ -63,22 +61,17 @@ class PortfolioController extends Controller
         
             $file = $request->file('image');
 
-            $filename = "home-header-" . time() . '.jpg';
+            $filename = "portfolio-image-" . time() . '.jpg';
 
             Image::make($file)->save(public_path('images/' . $filename));
 
             
-        }else{
-            $file =  File::get('portfolios/images/' . $portfolio->image);
-
-            $filename = $portfolio->image;
-;
         }
-
-
+        
 
         $portfolio->title = $request->input('title');
         $portfolio->body  = $request->input('body');
+        $portfolio->link  = $request->input('link');
         $portfolio->image = $filename;
 
         $portfolio->save();
