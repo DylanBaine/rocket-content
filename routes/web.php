@@ -26,8 +26,14 @@ Route::resource('/skill-set', 'SkillSetController');
 Route::resource('/portfolio', 'PortfolioController');
 Route::resource('/message', 'MessagesController');
 
-
+Route::get('/pencil-rocket', function(){
+	return view('demo.pencil-rocket');
+});
 
 Auth::routes();
+
+Route::get('/register', function(){
+	return redirect('/');
+});
 
 //Route::get('/home', 'HomeController@index');
