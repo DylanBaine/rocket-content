@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
+	<meta charset="UTF-8">	
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Pencil Rocket Dev</title>
 
 
@@ -50,9 +51,9 @@
 
 	<header class="full-height flex-center hero" style=" position: fixed; width: 100vw; z-index: 999;">
 		<div>
-			<div class="bg-l col-sm-6 full-height flex-center" style="position: absolute; top: 0; left: 0;background-color: orange;"><h1>PENCIL</h1></div>
+			<div class="bg-l col-xs-6 full-height flex-center" style="position: absolute; top: 0; left: 0;background-color: orange;"><h1>PENCIL</h1></div>
 			<img class="rocket" style="position: relative; z-index: 999; transition: margin .5s; width: 200px;" src="{{asset('images/PencilRocket.png')}}" alt="rocket!">
-			<div class="bg-r col-sm-6 col-sm-offset-6 full-height flex-center" style="position: absolute; top: 0; left: 0;background-color: orange;"><h1>ROCKET</h1></div>				
+			<div class="bg-r col-xs-6 col-xs-offset-6 full-height flex-center" style="position: absolute; top: 0; left: 0;background-color: orange;"><h1>ROCKET</h1></div>				
 		</div>
 	</header>
 
