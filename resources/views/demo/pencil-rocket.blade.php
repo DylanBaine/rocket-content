@@ -46,14 +46,14 @@
 <body style="height: 450vh; background-image: url('http://free4kwallpaper.com/wp-content/uploads/2016/01/Deep-Space-4K-Wallpaper.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;">		
 
 	<div class="keep-scrolling-cont">
-		<h1><span class="keep-scrolling-up glyphicon glyphicon-chevron-right"></span> Scroll <small>to take an adventure</small> <span class="keep-scrolling glyphicon glyphicon-chevron-right"></span></h1>
+		<h1><span class="keep-scrolling-up glyphicon glyphicon-chevron-right"></span>Scroll<small>to take an adventure</small><span class="keep-scrolling glyphicon glyphicon-chevron-right"></span></h1>
 	</div>
 
 	<header class="full-height flex-center hero" style=" position: fixed; width: 100vw; z-index: 999;">
 		<div>
-			<div class="bg-l col-xs-6 full-height flex-center" style="position: absolute; top: 0; left: 0;background-color: orange;"><h1>PENCIL</h1></div>
+			<div class="bg-l col-xs-6 full-height flex-center" style="position: absolute; top: 0; left: 0;background-color: orange;"><h1 style="margin-right: 50px;">PENCIL</h1></div>
 			<img class="rocket" style="position: relative; z-index: 999; transition: margin .5s; width: 200px;" src="{{asset('images/PencilRocket.png')}}" alt="rocket!">
-			<div class="bg-r col-xs-6 col-xs-offset-6 full-height flex-center" style="position: absolute; top: 0; left: 0;background-color: orange;"><h1>ROCKET</h1></div>				
+			<div class="bg-r col-xs-6 col-xs-offset-6 full-height flex-center" style="position: absolute; top: 0; left: 0;background-color: orange;"><h1 style="margin-left: 50px;">ROCKET</h1></div>				
 		</div>
 	</header>
 
