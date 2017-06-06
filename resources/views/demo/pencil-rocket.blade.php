@@ -108,19 +108,19 @@
 			<article class="flex-center">
 				
 				<div class="col-xs-12" style="padding: 0;">
-					<div class="col-md-4 flex-center half-height" style="background-color: red;">
+					<div class="col-md-4 col-xs-2 flex-center half-height" style="background-color: red;">
 					item one
 					</div>
-					<div class="col-md-4 flex-center half-height" style="background-color: salmon;">
+					<div class="col-md-4 col-xs-2 flex-center half-height" style="background-color: salmon;">
 					item two
 					</div>
-					<div class="col-md-4 flex-center half-height" style="background-color: purple;">
+					<div class="col-md-4 col-xs-2 flex-center half-height" style="background-color: purple;">
 					item three
 					</div>
-					<div class="col-md-4 flex-center half-height" style="background-color: green;">
+					<div class="col-md-4 col-xs-2 flex-center half-height" style="background-color: green;">
 					item four
 					</div>
-					<div class="col-md-4 flex-center half-height" style="background-color: purple;">
+					<div class="col-md-4 col-xs-2 flex-center half-height" style="background-color: purple;">
 					item five
 					</div>
 				</div>
