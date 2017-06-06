@@ -46,7 +46,7 @@
 <body style="height: 450vh; background-image: url('http://free4kwallpaper.com/wp-content/uploads/2016/01/Deep-Space-4K-Wallpaper.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;">		
 
 	<div class="keep-scrolling-cont">
-		<h1><span class=" col-xs-hidden keep-scrolling-up glyphicon glyphicon-chevron-right"></span>Scroll<small>to take an adventure</small><span class="keep-scrolling glyphicon glyphicon-chevron-right"></span></h1>
+		<h1><span class="hidden-xs keep-scrolling-up glyphicon glyphicon-chevron-right"></span>Scroll<small>to take an adventure</small><span class="keep-scrolling glyphicon glyphicon-chevron-right"></span></h1>
 	</div>
 
 	<header class="full-height flex-center hero" style=" position: fixed; width: 100vw; z-index: 999;">
