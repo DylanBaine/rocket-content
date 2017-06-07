@@ -83,7 +83,7 @@
 		}
 	</style>
 </head>
-<body style="height: 450vh; background-image: url('{{url('images/space.png')}}'); background-size: cover; background-position: center -50px; background-repeat: no-repeat; background-attachment: fixed;">		
+<body style="height: 450vh; background-image: url('{{url('images/space.png')}}'); background-size: cover; background-position: center -50px;background-attachment: fixed;">		
 
 <div class="moon">
 	<div class="moon-shadow"></div>
