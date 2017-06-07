@@ -40,10 +40,35 @@
 		.keep-scrolling-up{
 			transform: rotate(-90deg);
 		}
-		
+		.moon{
+			width: 100px;
+			height: 100px;
+			position: fixed;
+			border-radius: 100%;
+			z-index: 1;
+			background-image:url('{{url('images/space-clouds.png')}}');
+			background-repeat: no-repeat;
+			background-size: cover;
+			background-position: center;
+			right: 10px;
+			top: 10px;
+		}
+		.moon-shadow{
+			width: 100%;
+			height: 100%;
+			position: relative;
+			top: 0;
+			left: 0;
+			border-radius: 100%;
+			background: -webkit-linear-gradient(45deg, rgba(0,0,0,0.80) 8%,rgba(0,0,0,0.80) 24%,rgba(0,0,0,0.83) 35%,rgba(0,0,0,0.50) 72%,rgba(0,0,0,0) 91%,rgba(0,0,0,.90) 100%); 
+		}
 	</style>
 </head>
-<body style="height: 450vh; background-image: url('http://free4kwallpaper.com/wp-content/uploads/2016/01/Deep-Space-4K-Wallpaper.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;">		
+<body style="height: 450vh; background-image: url('{{url('images/space.png')}}'); background-size: cover; background-position: center -50px; background-repeat: no-repeat; background-attachment: fixed;">		
+
+<div class="moon">
+	<div class="moon-shadow"></div>
+</div>
 
 	<div class="keep-scrolling-cont">
 		<h1><span class="hidden-xs keep-scrolling-up glyphicon glyphicon-chevron-right"></span>Scroll <small>to take an adventure</small><span class="hidden-xs keep-scrolling glyphicon glyphicon-chevron-right"></span></h1>
@@ -162,8 +187,20 @@
 			});
 			$('.spinner').css({
 				'transform' : 'rotate(' + bgLeftScroll / 5 + 'deg)'
-			})
-
+			});
+			var bgPOS = bgLeftScroll + 50;
+			$('body').css({
+				'background-position-y' : - bgPOS / 80 + 'px',
+			});
+			$('.moon').css({
+				'top' :  bgPOS / 50 + 'px',
+				'right' : bgPOS / 20 + 'px',
+				'width' : bgPOS  + 'px',
+				'height' : bgPOS  + 'px',
+			});
+			$('.moon-shadow').css({
+			'opacity' : Math.pow(bgPOS , -1) * 500
+			});
 
 			if(bgLeftScroll < $(window).height() / 19){
 				$('.rocket').css({
