@@ -62,6 +62,25 @@
 			border-radius: 100%;
 			background: -webkit-linear-gradient(45deg, rgba(0,0,0,0.80) 8%,rgba(0,0,0,0.80) 24%,rgba(0,0,0,0.83) 35%,rgba(0,0,0,0.50) 72%,rgba(0,0,0,0) 91%,rgba(0,0,0,.90) 100%); 
 		}
+		.ports{
+			text-align: center;
+		}
+		.port-item{
+			margin: 20px;
+			width: 33.33vw;
+			height: 33.33vw;
+			display: inline-block;
+		}
+		.port-item > .flex-center{
+			width: 100%;
+			height: 100%;
+		}
+		@media (max-width: 768px){
+			.port-item{
+				width: 80vw;
+				height: 80vw;
+			}
+		}
 	</style>
 </head>
 <body style="height: 450vh; background-image: url('{{url('images/space.png')}}'); background-size: cover; background-position: center -50px; background-repeat: no-repeat; background-attachment: fixed;">		
@@ -132,21 +151,21 @@
 			</header>
 			<article class="flex-center">
 				
-				<div class="col-xs-12" style="padding: 0;">
-					<div class="col-md-4 col-xs-6 flex-center half-height" style="background-color: red;">
-					item one
+				<div class="col-xs-12 ports" style="padding: 0;">
+					<div class="port-item" style="background-color: red;">
+						<div class="flex-center half-height ">item one</div>
 					</div>
-					<div class="col-md-4 col-xs-6 flex-center half-height" style="background-color: salmon;">
-					item two
+					<div class="port-item" style="background-color: salmon;">
+						<div class="flex-center half-height ">item two</div>
 					</div>
-					<div class="col-md-4 col-xs-6 flex-center half-height" style="background-color: purple;">
-					item three
+					<div class="port-item" style="background-color: purple;">
+						<div class="flex-center ">item three</div>
 					</div>
-					<div class="col-md-4 col-xs-6 flex-center half-height" style="background-color: green;">
-					item four
+					<div class="port-item" style="background-color: green;">
+						<div class="flex-center ">item four</div>
 					</div>
-					<div class="col-md-4 col-xs-6 flex-center half-height" style="background-color: purple;">
-					item five
+					<div class="port-item" style="background-color: yellow;">
+						<div class="flex-center">item five</div>
 					</div>
 				</div>
 
