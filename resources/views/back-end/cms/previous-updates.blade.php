@@ -18,7 +18,7 @@
 
 							<div class="panel panel-info">
 								
-								<div class="jumbotron flex-center" style="background-image: url(images/{{$header->image}}); background-repeat: no-repeat; background-size: cover; background-position: center; height: 70vh; background-attachment: none;">
+								<div class="jumbotron flex-center" style="background-image: url(images/{{$header->image}}); background-repeat: no-repeat; background-size: cover; background-position: center; height: 70vh; background-attachment: initial;">
 								<div>
 									<h2 class="text-center">{{$header->title}}</h2>
 									

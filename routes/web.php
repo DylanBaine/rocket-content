@@ -32,8 +32,8 @@ Route::get('/pencil-rocket', function(){
 
 Auth::routes();
 
-Route::get('/register', function(){
-	return redirect('/');
-});
+//Route::get('/register', function(){
+//	return redirect('/');
+//});
 
 //Route::get('/home', 'HomeController@index');

@@ -7,14 +7,13 @@ use Image;
 
 class AboutMeController extends Controller
 {
-	public function store( Request $request)
-	{
-
-    public function __construct()
+	    public function __construct()
     {
         $this->middleware('auth')->except('show');
     }
 
+	public function store( Request $request)
+	{
 		
 		if($request->hasFile('image')){
 
