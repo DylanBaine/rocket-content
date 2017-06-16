@@ -1,11 +1,11 @@
 @foreach($aboutMe as $aboutMe)
-
+{{--large screen--}}
 <div class="hidden-xs hidden-sm visible-md-12">
 	<div class="flex-center full-height about-me-text col-md-6 ">
 		<div>
 			<h1 class="text-center">{{$aboutMe->title}}</h1>
 			<hr style="width: 90%">
-			<p class="text-center col-md-10 col-md-offset-1" {!! $aboutMe->body !!} </p>
+			<div style="padding: 10px;"> {!! $aboutMe->body !!} </div>
 		</div>		
 	</div>
 
@@ -13,7 +13,7 @@
 	
 	</div>
 </div>
-
+{{--small screen--}}
 <div class="visible-xs-12 hidden-md hidden-lg">
 
 	<h1 class="text-center half-height flex-center">{{$aboutMe->title}}</h1>
@@ -25,7 +25,7 @@
 
 	<div class="flex-center full-height about-me-text col-xs-12">
 		<div>
-			<p class="text-center col-md-10 col-md-offset-1" {!! $aboutMe->body !!} </p>
+			<p class="col-md-10 col-md-offset-1" {!! $aboutMe->body !!} </p>
 		</div>		
 	</div>
 </div>
