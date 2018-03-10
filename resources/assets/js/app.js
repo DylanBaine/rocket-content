@@ -125,7 +125,7 @@ $(document).ready(function() {
 				content: '<br><div class="container grid-list-md"><div class="layout row wrap"><div class="xs6 flex display-flex align-center justify-center"><div><h2>Heading</h2><p>Text</p></div></div><div class="xs6 flex display-flex align-center justify-center"><div><h2>Heading</h2><p>Text</p></div></div></div><br></div><br>'
 			},{
 				title: 'Three Column',
-				content: '<br><div class="container grid-list-md"><div class="layout row wrap"><br><div class="md4 flex display-flex align-center justify-center"><div><h2>Heading</h2><p>Text</p></div></div><div class="md4 flex display-flex align-center justify-center"><div><h2>Heading</h2><p>Text</p></div></div><div class="md4 flex display-flex align-center justify-center"><br><br><br></div><br></div><br></div><br>'
+				content: '<br><div class="container grid-list-md"><div class="layout row wrap"><br><div class="md4 flex display-flex align-center justify-center"><div><h2>Heading</h2><p>Text</p></div></div><div class="md4 flex display-flex align-center justify-center"><div><h2>Heading</h2><p>Text</p></div></div><div class="md4 flex display-flex align-center justify-center"><h1>Heading</h1><p>Text</p></div><br></div><br></div><br>'
 			},{
 				title: 'Card',
 				content: '<div class="card" style="min-height: 300px;"><div><img src="https://placeimg.com/300/190/arch"/></div><div class="padded"><h1>Card Title</h1><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo accusamus ducimus temporibus aliquid nisi laborum necessitatibus, atque, numquam facilis ea autem maiores reprehenderit porro, magnam eligendi a, quae eaque voluptas.</p></div></div>'
@@ -133,7 +133,7 @@ $(document).ready(function() {
 				title: 'Button',
 				content: '<a href="#" class="btn btn--large padded">Button!</a>'
 			},{
-				title: 'Alt Header',
+				title: 'Header',
 				content: '<div class="pos-relative header-from-builder"><div class="pos-absolute align-center justify-center display-flex" style="left: 0; top: 5%; height: 90%; z-index: 9; width: 100%; margin: auto;"><div style="width: 500px; padding: 20px;"><h2>Title</h2><p>Text</p></div></div><img class="pos-absolute" style="z-index: 1;" src="https://placeimg.com/1000/280/arch" /></div><p></p>'
 			},{
 				title: 'Contact Form',

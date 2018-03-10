@@ -1,9 +1,15 @@
-@extends('layouts.app')
+@extends('layouts.front-end')
 
 @section('content')
-	<v-container grid-list-xl fluid style="padding: 0;" class="post-{{$post->type}}">
-		{!!$post->content!!}
-	</v-container>
+	@if($post)
+		<v-container grid-list-xl fluid style="padding: 0;" class="post-{{$post->type}}">
+				{!!$post->content!!}
+		</v-container>
+	@else
+		<div class="padded">
+			<h1 class="bigger">No content. Are you site admin? <a href="/login">Login Here</a></h1>
+		</div>
+	@endif
 	@if(Auth::user())
 		<div class="pos-fixed bottom left">
 			<v-btn href="{{url('/posts/'.$post->id.'/edit')}}" class="yellow accent-3 darken-2">Edit</v-btn>

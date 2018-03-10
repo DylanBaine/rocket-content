@@ -22,25 +22,8 @@
 </head>
 <body>
     <div id="app">
-        <v-app v-cloak>
-            @if(Auth::user())
-                <v-toolbar fixed>
-                    <v-spacer></v-spacer>
-                    <v-toolbar-items>
-                        <v-btn href="/dashboard" flat>Dashboard</v-btn>
-                        <v-btn href="/posts" flat>Posts</v-btn>
-                        <v-btn href="/emails" flat>Emails</v-btn>
-                        <v-btn @click="showPhotos" flat>Photos</v-btn>
-                        <v-btn @click="showSubscribers" flat>Newsletter Subscribers</v-btn>
-                        <form action="/logout" method="post">
-                            @csrf
-                            <v-btn style="height: 100%;" type="submit" flat>Logout</v-btn>                        
-                        </form>
-                    </v-toolbar-items>
-                </v-toolbar>
-            @else            
+        <v-app v-cloak>          
                 <front-end-menu></front-end-menu>
-            @endif
                 <modal-container v-if="showingPhotos || showingSubscribers" class="modal-container">
                     <manage-photos v-if="showingPhotos"></manage-photos>
                     <subscribers v-if="showingSubscribers"></subscribers>
@@ -48,7 +31,7 @@
                 <modal-container v-if="alert.showing">
                     <v-alert :type="alert.type" :value="true" dissmissable>@{{alert.message}}</v-alert>
                 </modal-container>
-            <div style="margin-top: 64px;">
+            <div style="margin-top: 48px;">
                 @yield('content')
             </div>
         </v-app>

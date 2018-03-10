@@ -5,6 +5,8 @@ Route::get('/dashboard', function(){
 	return view('dashboard', compact('posts'));
 })->middleware('auth');
 
+Route::put('edit-current-user', 'HomeController@editCurrentUser')->name('user.edit')->middleware('auth');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
@@ -26,4 +28,8 @@ Route::get('browse/{type}', 'PostTypeController@posts')->name('types.posts');
 Route::get('/{post}', 'PostController@show')->name('posts.show');
 
 Route::get('/', 'PostController@frontPage')->name('welcome');
+
+Route::get('/register', function(){
+	return redirect()->back();
+});
 

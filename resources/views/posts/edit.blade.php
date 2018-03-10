@@ -37,7 +37,7 @@
 				<textarea name="content" id="builder" rows="30">{!!$post->content!!}</textarea>
 
 				<v-card-actions>
-					<v-btn type="submit" color="primary" block>Save</v-btn>
+					<v-btn class="pos-fixed bottom right" style="width: 30px;" type="submit" color="primary" block>Save</v-btn>
 				</v-card-actions>
 
 			</form>

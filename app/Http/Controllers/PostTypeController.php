@@ -18,7 +18,7 @@ class PostTypeController extends Controller
     {
          $pages = Post::where('type', 'page')->get()->toArray();
 
-         $types = PostType::where('in_menu', 1)->where('active', 1)->orderBy('order_position', 'DESC')->get()->toArray();
+         $types = PostType::where('slug', '!=', 'page')->get()->toArray();
 
          $array = array_merge($pages, $types);
 
