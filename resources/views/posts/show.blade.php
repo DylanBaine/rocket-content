@@ -11,7 +11,7 @@
 		</div>
 	@endif
 	@if(Auth::user())
-		<div class="pos-fixed bottom left">
+		<div class="pos-fixed bottom left" style="z-index: 999;">
 			<v-btn href="{{url('/posts/'.$post->id.'/edit')}}" class="yellow accent-3 darken-2">Edit</v-btn>
 			<v-btn href="{{url('/posts/'.$post->id.'/delete')}}" class="error">Delete</v-btn>
 		</div>
