@@ -8,11 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{$setting->title}}</title>   
-
-    <link rel="icon"
-        type="image/png" 
-        href="{{$setting->icon}}">
+    <title>RocketContent</title>
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
