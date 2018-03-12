@@ -8,7 +8,11 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Cole Mader</title>
+    <title>{{$setting->title}}</title>   
+
+    <link rel="icon"
+        type="image/png" 
+        href="{{$setting->icon}}">
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">

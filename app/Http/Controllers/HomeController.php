@@ -4,10 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Auth;
+use \App\Setting;
 
 class HomeController extends Controller
 {
-	public function EditCurrentUser(Request $request)
+	public function editCurrentUser(Request $request)
 	{
 		$user = Auth::user();
 
@@ -17,5 +18,16 @@ class HomeController extends Controller
 
 		$user->save();
 		 return redirect()->back();
+	}
+	public function editSettings(Request $request)
+	{
+		$setting = Setting::find(1);
+
+		$setting->icon = request('icon');
+		$setting->title = request('title');
+
+		$setting->save();
+
+		return redirect()->back();
 	}
 }

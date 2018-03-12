@@ -2,10 +2,13 @@
 
 Route::get('/dashboard', function(){
 	$posts = App\Post::orderBy('times_visited', 'DESC')->get();
-	return view('dashboard', compact('posts'));
+	$setting = App\Setting::find(1);
+	return view('dashboard', compact('posts', 'setting'));
 })->middleware('auth');
 
 Route::put('edit-current-user', 'HomeController@editCurrentUser')->name('user.edit')->middleware('auth');
+
+Route::put('edit-settings', 'HomeController@editSettings')->name('settings.edit')->middleware('auth');
 
 Auth::routes();
 
