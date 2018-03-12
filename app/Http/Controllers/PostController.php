@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Post;
 use App\PostType as Type;
+use App\Setting;
 
 class PostController extends Controller
 {
@@ -51,7 +52,7 @@ class PostController extends Controller
         $post->times_visited += 1;
         $post->save();
 
-        $setting = \App\Setting::find(1);
+        $setting = Setting::find(1);
 
         return view('posts.show', compact('post', 'setting'));
     }
@@ -93,6 +94,8 @@ class PostController extends Controller
     {
         $post = Post::where('type', 'page')->where('slug', 'welcome')->first();
 
-        return view('posts.show', compact('post'));
+        $setting = Setting::find(1);
+
+        return view('posts.show', compact('post', 'setting'));
     }
 }
