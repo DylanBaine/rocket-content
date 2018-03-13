@@ -52,9 +52,7 @@ class PostController extends Controller
         $post->times_visited += 1;
         $post->save();
 
-        $setting = Setting::find(1);
-
-        return view('posts.show', compact('post', 'setting'));
+        return view('posts.show', compact('post'));
     }
 
     public function edit($id)

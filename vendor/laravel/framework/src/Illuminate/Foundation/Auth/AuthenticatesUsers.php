@@ -17,8 +17,7 @@ trait AuthenticatesUsers
      */
     public function showLoginForm()
     {
-        $setting = \App\Setting::find(1);
-        return view('auth.login', compact('setting'));
+        return view('auth.login';
     }
 
     /**
