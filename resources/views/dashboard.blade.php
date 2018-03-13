@@ -47,6 +47,7 @@
 									data-images-only="true" />
 							   
 								<v-text-field
+									name="title"
 									label="Site Title"
 									name="title"
 									value="{{$setting->title}}"

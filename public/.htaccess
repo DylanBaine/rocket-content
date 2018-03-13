@@ -22,4 +22,5 @@
     # redirect to https
     RewriteCond %{HTTP:X-Forwarded-Port} !=443
     RewriteRule (.*) https://%{HTTP_HOST}/$1 [R=301,L]
+    RewriteRule (.*) https://%{HTTP_HOST}/$1 [R=301,L] 
 </IfModule>
