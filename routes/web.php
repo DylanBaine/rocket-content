@@ -2,7 +2,7 @@
 
 Route::get('/dashboard', function(){
 	$posts = App\Post::orderBy('times_visited', 'DESC')->get();
-	return view('dashboard', compact('posts');
+	return view('dashboard', compact('posts'));
 })->middleware('auth');
 
 Route::put('edit-current-user', 'HomeController@editCurrentUser')->name('user.edit')->middleware('auth');
