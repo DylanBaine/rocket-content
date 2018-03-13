@@ -1,5 +1,6 @@
 <template>
 <v-toolbar dense fixed scroll-off-screen dark style="z-index: 999;">
+	<h4>{{topLeft}}</h4>
     <v-spacer></v-spacer>
     <div class="hidden-sm-and-down" style="height: 100%;">
 	    <v-toolbar-items>
@@ -35,6 +36,9 @@
 				showingNav: false
 			}
 		},
+		props: [
+			'topLeft'
+		],
 		mounted(){
 			axios.get('/component-api/menu').then(res=>{
 				this.items = res.data;

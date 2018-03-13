@@ -23,8 +23,10 @@ class HomeController extends Controller
 	{
 		$setting = Setting::find(1);
 
-		$setting->icon = request('icon');
+		request('icon') ? $setting->icon = request('icon'): '';
 		$setting->title = request('title');
+		$setting->menu_text = request('top_left');
+		$setting->footer = request('footer');
 
 		$setting->save();
 

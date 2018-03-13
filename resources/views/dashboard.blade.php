@@ -47,11 +47,18 @@
 									data-images-only="true" />
 							   
 								<v-text-field
-									name="title"
 									label="Site Title"
 									name="title"
 									value="{{$setting->title}}"
 								></v-text-field>
+							   
+								<v-text-field
+									name="top_left"
+									label="Top Left Menu Text"
+									value="{{$setting->menu_text}}"
+								></v-text-field>
+
+								<input type="text" name="footer">
 
 							</div>
 
