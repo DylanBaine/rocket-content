@@ -37,7 +37,7 @@
 			}
 		},
 		props: [
-			'topLeft'
+			'topLeft',
 		],
 		mounted(){
 			axios.get('/component-api/menu').then(res=>{

@@ -28,7 +28,6 @@
     <div id="app">
         <v-app v-cloak>
                 <front-end-menu top-left="{{$setting->menu_text}}"></front-end-menu>
-                <front-end-menu></front-end-menu>
                 <modal-container v-if="showingPhotos || showingSubscribers" class="modal-container">
                     <manage-photos v-if="showingPhotos"></manage-photos>
                     <subscribers v-if="showingSubscribers"></subscribers>
