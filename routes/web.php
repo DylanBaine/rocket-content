@@ -1,39 +1,37 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+Route::get('/dashboard', function(){
+	$posts = App\Post::orderBy('times_visited', 'DESC')->get();
+	return view('dashboard', compact('posts'));
+})->middleware('auth');
 
-Route::get('/', 'PagesController@welcome');
+Route::put('edit-current-user', 'HomeController@editCurrentUser')->name('user.edit')->middleware('auth');
 
-
-
-//----------- CMS -----------//
-Route::get('/update-content', 'BackendPagesController@editPage');
-Route::get('/previous-updates', 'BackendPagesController@previousUpdates');
-Route::get('/home', 'BackendPagesController@home');
-
-Route::resource('/main-header', 'HomePageHeaderController');
-Route::resource('/about-me', 'AboutMeController');
-Route::resource('/skill-set', 'SkillSetController');
-Route::resource('/portfolio', 'PortfolioController');
-Route::resource('/message', 'MessagesController');
-
-Route::get('/pencil-rocket', function(){
-	return view('demo.pencil-rocket');
-});
+Route::put('edit-settings', 'HomeController@editSettings')->name('settings.edit')->middleware('auth');
 
 Auth::routes();
 
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::resource('/posts', 'PostController', ['except' => ['show', 'destroy']]);
+Route::get('/posts/{id}/delete', "PostController@destroy");
+
+Route::resource('/component-api/photos', 'PhotoController', ['only' => ['index', 'store', 'update', 'destroy']]);
+
+Route::resource('/component-api/post-types', 'PostTypeController');
+Route::get('/component-api/menu', 'PostTypeController@menu');
+
+Route::resource('/component-api/newsletter-subscribers', 'NewsletterSubscriberController', ['except' => ['create']]);
+
+Route::resource('/emails', 'EmailController', ['only' => ['index', 'show', 'store', 'create']]);
+
+Route::get('browse/{type}', 'PostTypeController@posts')->name('types.posts');
+
+Route::get('/{post}', 'PostController@show')->name('posts.show');
+
+Route::get('/', 'PostController@frontPage')->name('welcome');
+
 Route::get('/register', function(){
-	return redirect('/');
+	return redirect()->back();
 });
 
-//Route::get('/home', 'HomeController@index');
