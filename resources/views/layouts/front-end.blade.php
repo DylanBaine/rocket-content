@@ -38,6 +38,7 @@
             <div style="margin-top: 48px;">
                 @yield('content')
             </div>
+            {!!$setting->footer!!}
         </v-app>
     </div>
 

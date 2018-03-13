@@ -32,7 +32,7 @@
 	export default{
 		data(){
 			return{
-				items: '',				
+				items: '',
 				showingNav: false
 			}
 		},

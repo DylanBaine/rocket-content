@@ -58,7 +58,7 @@
 									value="{{$setting->menu_text}}"
 								></v-text-field>
 
-								<input type="text" name="footer">
+								<textarea name="footer" id="builder" rows="30">{!!$setting->footer!!}</textarea>
 
 							</div>
 
