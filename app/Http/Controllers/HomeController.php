@@ -8,6 +8,10 @@ use \App\Setting;
 
 class HomeController extends Controller
 {
+	public function index(){
+		return redirect('/dashboard');
+	}
+	
 	public function editCurrentUser(Request $request)
 	{
 		$user = Auth::user();
