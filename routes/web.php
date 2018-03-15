@@ -2,8 +2,11 @@
 
 Route::get('/dashboard', function(){
 	$posts = App\Post::orderBy('times_visited', 'DESC')->get();
-	return view('dashboard', compact('posts'));
+	$users = App\User::get();
+	return view('dashboard', compact('posts', 'users'));
 })->middleware('auth');
+
+Route::post('register-user', 'HomeController@register');
 
 Route::put('edit-current-user', 'HomeController@editCurrentUser')->name('user.edit')->middleware('auth');
 

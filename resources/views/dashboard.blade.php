@@ -2,7 +2,7 @@
 
 @section('content')
 
-<v-container>
+<v-container grid-list-xl>
 	@if($posts->count())
 
 		<header class="padded">
@@ -80,7 +80,7 @@
 		</header>
 		<section>
 			<v-layout class="flex-center text-xs-center" row wrap>
-				<v-flex md6 xs10 offset-md3 offset-xs1>
+				<v-flex md3>
 					<form action="{{route('user.edit')}}" method="post">
 						<v-card class="text-xs-center padded-lg">
 
@@ -113,6 +113,51 @@
 
 						</v-card>
 					</form>
+				</v-flex>
+				<v-flex md5>
+					<form action="/register-user" method="post">
+						<v-card class="text-xs-center padded-lg">
+
+							<div class="padded">
+								<h2>Add Users</h2>
+							</div>
+
+							{{csrf_field()}}
+
+							<div class="margin-auto" style="width: 80%;">
+								<v-text-field
+									name="email"
+									label="Email"
+								></v-text-field>
+								<v-text-field
+									name="name"
+									label="Name"
+								></v-text-field>
+
+								<v-text-field
+									name="password"
+									type="password"
+									label="Password"
+								></v-text-field>
+							</div>
+
+							<v-card-actions>
+								<v-btn type="submit" color="primary" block>Save</v-btn>
+							</v-card-actions>                        
+							
+
+						</v-card>
+					</form>
+				</v-flex>
+				<v-flex md2>
+					@foreach($users as $user)
+						<v-card>
+							<v-card-content>
+								<p>{{$user->name}}</p>
+								<p>{{$user->email}}</p>
+							</v-card-content>
+						</v-card>
+					@endforeach
 				</v-flex>
 			</v-layout>
 		</section>
