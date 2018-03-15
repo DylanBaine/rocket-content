@@ -2,6 +2,7 @@ require('./bootstrap');
 
 import Vue from 'vue';
 import Vuetify from 'vuetify';
+import Picker from 'vue-color';
 
 Vue.use(Vuetify);
 
@@ -12,6 +13,7 @@ Vue.component('manage-subscribers', require('./components/ManageSubscribers.vue'
 Vue.component('register-form', require('./components/RegisterForm.vue'));
 Vue.component('modal-container', require('./components/ModalContainer.vue'));
 Vue.component('front-end-menu', require('./components/FrontEndNav.vue'));
+Vue.component('color-picker', Picker.Chrome);
 
 
 const app = new Vue({
@@ -31,6 +33,7 @@ const app = new Vue({
 				postActive: true,
 				typeOptions: '',
 				selected: false,
+				headerColor: '',
 		},
 		mounted(){
 				this.getTypeOptions();

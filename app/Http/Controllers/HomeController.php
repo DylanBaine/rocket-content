@@ -33,6 +33,7 @@ class HomeController extends Controller
 		$setting->title = request('title');
 		$setting->menu_text = request('top_left');
 		$setting->footer = request('footer');
+		request('header_color') ? $setting->header_color = request('header_color'): '';
 
 		$setting->save();
 

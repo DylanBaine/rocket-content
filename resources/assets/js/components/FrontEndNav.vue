@@ -1,5 +1,5 @@
 <template>
-<v-toolbar dense fixed scroll-off-screen dark style="z-index: 999;">
+<v-toolbar dense fixed scroll-off-screen dark :style="'z-index: 999; background-color:'+backgroundColor+';' ">
 	<h4>{{topLeft}}</h4>
     <v-spacer></v-spacer>
     <div class="hidden-sm-and-down" style="height: 100%;">
@@ -38,6 +38,7 @@
 		},
 		props: [
 			'topLeft',
+			'backgroundColor'
 		],
 		mounted(){
 			axios.get('/component-api/menu').then(res=>{

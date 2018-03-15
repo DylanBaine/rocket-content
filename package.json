@@ -20,6 +20,7 @@
         "vuetify": "^1.0.3"
     },
     "dependencies": {
-        "jquery": "^3.3.1"
+        "jquery": "^3.3.1",
+        "vue-color": "^2.4.5"
     }
 }

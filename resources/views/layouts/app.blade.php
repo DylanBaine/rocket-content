@@ -27,6 +27,7 @@
                 <v-toolbar fixed>
                     <v-spacer></v-spacer>
                     <v-toolbar-items>
+                        <v-btn href="/" flat>Visit Site</v-btn>
                         <v-btn href="/dashboard" flat>Dashboard</v-btn>
                         <v-btn href="/posts" flat>Posts</v-btn>
                         <v-btn href="/emails" flat>Emails</v-btn>

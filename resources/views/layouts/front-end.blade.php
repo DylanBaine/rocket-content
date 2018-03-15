@@ -27,7 +27,7 @@
 <body>
     <div id="app">
         <v-app v-cloak>
-                <front-end-menu top-left="{{$setting->menu_text}}"></front-end-menu>
+                <front-end-menu top-left="{{$setting->menu_text}}" background-color="{{$setting->header_color}}"></front-end-menu>
                 <modal-container v-if="showingPhotos || showingSubscribers" class="modal-container">
                     <manage-photos v-if="showingPhotos"></manage-photos>
                     <subscribers v-if="showingSubscribers"></subscribers>
@@ -39,6 +39,11 @@
                 @yield('content')
             </div>
             {!!$setting->footer!!}
+            @if(Auth::user())
+                <div class="pos-fixed bottom right">
+                    <v-btn color="primary" href="/dashboard">Go to dasboard</v-btn>
+                </div>
+            @endif
         </v-app>
     </div>
 

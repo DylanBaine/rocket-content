@@ -29,7 +29,7 @@
 		</header>
 		<section>
 			<v-layout class="flex-center text-xs-center" row wrap>
-				<v-flex md6 xs10 offset-md3 offset-xs1>
+				<v-flex md8 xs10 offset-md2 offset-xs1>
 					<form action="{{route('settings.edit')}}" method="post">
 						<v-card class="text-xs-center padded-lg">
 
@@ -58,6 +58,26 @@
 									label="Top Left Menu Text"
 									value="{{$setting->menu_text}}"
 								></v-text-field>
+
+								<div class="padded" style="margin: auto; text-align: center;">
+
+									<label for="headerColor">Header Color</label>
+
+
+									<div class="padded">
+										<div style="background-color: {{$setting->header_color}}" class="text-xs-center padded-lg white--text">
+											<h3>Current Header Color</h3>
+										</div>
+									</div>
+
+									<color-picker
+										v-model="headerColor" 
+										@input="updatColor"
+									></color-picker>
+
+								</div>
+
+								<input type="hidden" name="header_color" :value="headerColor.hex">
 
 								<textarea name="footer" id="builder" rows="30">{!!$setting->footer!!}</textarea>
 
