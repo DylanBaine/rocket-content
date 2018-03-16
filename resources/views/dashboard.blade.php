@@ -71,8 +71,7 @@
 									</div>
 
 									<color-picker
-										v-model="headerColor" 
-										@input="updatColor"
+										v-model="headerColor"
 									></color-picker>
 
 								</div>
