@@ -38,6 +38,11 @@ img{
 .bigger{
 	font-size: 5rem;
 }
+@media only screen and (max-width: 600px){
+	.bigger{
+		font-size: 2rem;
+	}
+}
 
 .capitalize{
 	text-transform: capitalize;

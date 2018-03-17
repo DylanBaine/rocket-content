@@ -23,7 +23,7 @@
         	<v-layout v-if="selected" class="padded" row wrap>
 				<v-flex style="border-right: 1px solid black" class="text-xs-center padded" md1>Title</v-flex>
 				<v-flex style="border-right: 1px solid black" class="text-xs-center padded" md1>Type</v-flex>
-				<v-flex md10 class="padded">Content</v-flex>
+				<v-flex md10 class="padded text-xs-center"><b>Content</b></v-flex>
         	</v-layout>
             <h3 v-if="!selected" class="text-xs-center">Select a Post type to see it.</h3>
 			<div class="room-top">

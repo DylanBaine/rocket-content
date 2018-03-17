@@ -7,7 +7,7 @@
 	</header>
 	<v-layout row wrap>
 		@foreach($posts as $post)
-			<v-flex md3>
+			<v-flex md3 xs12>
 				@if($type->layout_style == 'Basic Card')
 					<v-card>
 						<v-card-text>

@@ -72,6 +72,7 @@ class PostTypeController extends Controller
     public function update(Request $request, $id)
     {
         $postType = PostType::find($id);
+        $posts = Post::where('type', $postType->slug)->get();
 
         $postType->name         = request('name');
         $postType->slug         = request('slug');
@@ -87,6 +88,11 @@ class PostTypeController extends Controller
         request('active') ? $active = 1 : $active = 0;
         $postType->active        = $active;
         $postType->layout_style  = request('layout_style');
+
+        foreach($posts as $post){
+            $post->type = $postType->slug;
+            $post->save();
+        }
 
         $postType->save();
     }
