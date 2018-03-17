@@ -40,7 +40,7 @@
             </div>
             {!!$setting->footer!!}
             @if(Auth::user())
-                <div class="pos-fixed bottom right">
+                <div style="z-index: 999;" class="pos-fixed bottom right">
                     <v-btn color="primary" href="/dashboard">Go to dasboard</v-btn>
                 </div>
             @endif

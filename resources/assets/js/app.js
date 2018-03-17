@@ -14,6 +14,7 @@ Vue.component('register-form', require('./components/RegisterForm.vue'));
 Vue.component('modal-container', require('./components/ModalContainer.vue'));
 Vue.component('front-end-menu', require('./components/FrontEndNav.vue'));
 Vue.component('color-picker', Picker.Chrome);
+Vue.component('post-preview', require('./components/SquareWithPreview.vue'));
 
 
 const app = new Vue({

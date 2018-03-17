@@ -33,6 +33,7 @@ class PostTypeController extends Controller
     public function posts($type){
         $posts = Post::where('type', $type)->paginate(12);
         $setting = \App\Setting::find(1);
+        $type = PostType::where('name', $type)->first();
 
         return view('types.posts', compact('posts', 'type', 'setting'));
     }
@@ -63,6 +64,7 @@ class PostTypeController extends Controller
         $postType->active        = $active;
 
         $postType->order_position = $count ++;
+        $postType->layout_style = request('layout');
 
         $postType->save();
     }
@@ -84,6 +86,7 @@ class PostTypeController extends Controller
 
         request('active') ? $active = 1 : $active = 0;
         $postType->active        = $active;
+        $postType->layout_style  = request('layout_style');
 
         $postType->save();
     }
