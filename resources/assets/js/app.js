@@ -20,7 +20,7 @@ Vue.component('post-preview', require('./components/SquareWithPreview.vue'));
 const app = new Vue({
 		el: '#app',
 		data: {
-				token: document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
+			token: document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
 			showingPhotos: false,
 			showingSubscribers: false,
 			showingTypes: false,

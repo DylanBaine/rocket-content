@@ -31,9 +31,9 @@ class PostTypeController extends Controller
     }
 
     public function posts($type){
-        $posts = Post::where('type', $type)->paginate(12);
+        $type = PostType::where('slug', $type)->first();
+        $posts = Post::where('type', $type->slug)->paginate(12);
         $setting = \App\Setting::find(1);
-        $type = PostType::where('name', $type)->first();
 
         return view('types.posts', compact('posts', 'type', 'setting'));
     }

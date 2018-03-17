@@ -4,7 +4,6 @@
 <v-container grid-list-xl>
 	<header class="padded">
 		<h1 class="text-xs-center capitalize bigger">{{$type->name}}</h1>
-		{{$type->layout_style}}
 	</header>
 	<v-layout row wrap>
 		@foreach($posts as $post)
