@@ -45,7 +45,9 @@
 									name="icon"
 									data-crop=""
 									data-images-only="true" />
-							   
+								<div class="padded">
+									<label for="icon-in-top-left"> <input @if($setting->icon_in_top_left) checked @endif type="checkbox" id="icon-in-top-left" name="icon_in_top_left"> Show Icon one top left of menu?</label>
+							   </div>
 								<v-text-field
 									name="title"
 									label="Site Title"

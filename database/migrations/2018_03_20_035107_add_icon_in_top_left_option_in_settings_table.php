@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddColorColumnToSettings extends Migration
+class AddIconInTopLeftOptionInSettingsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,7 +14,7 @@ class AddColorColumnToSettings extends Migration
     public function up()
     {
         Schema::table('settings', function (Blueprint $table) {
-            $table->string('header_color')->nullable();
+            $table->boolean('icon_in_top_left')->nullable();
         });
     }
 
