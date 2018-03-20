@@ -34,7 +34,7 @@ class HomeController extends Controller
 		$setting->menu_text = request('top_left');
 		$setting->footer = request('footer');
 		request('header_color') ? $setting->header_color = request('header_color'): '';
-		request('icon_in_top_left') ? $setting->icon_in_top_left = 1 : 0;
+		$setting->icon_in_top_left = request('icon_in_top_left');
 
 		$setting->save();
 
