@@ -1,6 +1,8 @@
 <template>
 	<div class="modal-container">
-		<v-btn @click="this.$root.closeModal" class="modal-close" flat icon color="error"><v-icon>cancel</v-icon></v-btn>
+		<div class="pos-fixed full-cw full-ch" @click="this.$root.closeModal">
+			
+		</div>
 		<slot/>
 	</div>
 </template>

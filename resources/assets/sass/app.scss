@@ -131,9 +131,9 @@ img{
 	z-index: 100;
 }
 .modal-close{
-	position: absolute;
+	position: relative;
+	left: 88%;
 	top: 10px;
-	left: 10px;
 }
 
 .header-from-builder{
