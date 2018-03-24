@@ -18,7 +18,7 @@
 						</v-card-text>
 						<v-card-actions>
 							<v-spacer></v-spacer>
-							<v-btn color="success" href="{{url($type .'/'. $post->slug)}}">Go</v-btn>
+							<v-btn color="success" href="{{url($type->slug .'/'. $post->slug)}}">Go</v-btn>
 						</v-card-actions>
 					</v-card>
 				@elseif($type->layout_style == 'Square with Preview')

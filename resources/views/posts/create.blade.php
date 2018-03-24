@@ -31,6 +31,7 @@
 					item-value="slug"
 					item-text="name"
 					required
+					@click="getTypeOptions()"
 				></v-select>
 
 				<v-checkbox label="Active" v-model="postActive"></v-checkbox>
