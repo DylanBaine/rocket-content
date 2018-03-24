@@ -28,9 +28,10 @@ Route::resource('/component-api/newsletter-subscribers', 'NewsletterSubscriberCo
 
 Route::resource('/emails', 'EmailController', ['only' => ['index', 'show', 'store', 'create']]);
 
-Route::get('browse/{type}', 'PostTypeController@posts')->name('types.posts');
+//Route::get('browse/{type}', 'PostTypeController@posts')->name('types.posts');
 
-Route::get('/{post}', 'PostController@show')->name('posts.show');
+Route::get('/{slug}', 'PostController@show')->name('pages.show');
+Route::get('/{type}/{page}', 'PostController@page')->name('posts.show');
 
 Route::get('/', 'PostController@frontPage')->name('welcome');
 

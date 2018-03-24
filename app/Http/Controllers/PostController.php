@@ -12,7 +12,7 @@ class PostController extends Controller
 
     public function __construct()
     {
-        $this->middleware('auth')->except(['show', 'frontPage']);
+        $this->middleware('auth')->except(['show', 'frontPage', 'page']);
     }
 
     public function index()
@@ -48,10 +48,26 @@ class PostController extends Controller
 
     public function show($slug)
     {
-        $post = Post::where('slug', $slug)->first();
+        $post = Post::where('type', 'Page')->where('slug', $slug)->first();
+
+        if($post != null){
+            $post->times_visited += 1;
+            $post->save();
+            return view('posts.show', compact('post'));
+        }else{
+            $type = Type::where('slug', $slug)->first();
+            $posts = Post::where('type', $type->slug)->paginate(12);
+            return view('types.posts', compact('posts', 'type', 'setting'));
+        }
+        
+    }
+
+    public function page($type, $page)
+    {
+        $type = Type::where('slug', $type)->first();
+        $post = Post::where('slug', $page)->first();
         $post->times_visited += 1;
         $post->save();
-
         return view('posts.show', compact('post'));
     }
 

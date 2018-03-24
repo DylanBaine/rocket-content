@@ -5,7 +5,7 @@
     <div class="hidden-sm-and-down" style="height: 100%;">
 	    <v-toolbar-items>
 	        <template v-for="item in items">
-	        	<v-btn :href="item.name ? '/browse/'+item.slug : '/' + item.slug" flat>{{item.name}}{{item.title}}</v-btn>
+	        	<v-btn :href="item.name ? '/'+item.slug : '/' + item.slug" flat>{{item.name}}{{item.title}}</v-btn>
 	        </template>
 	    </v-toolbar-items>
 	</div>

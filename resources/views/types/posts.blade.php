@@ -18,13 +18,13 @@
 						</v-card-text>
 						<v-card-actions>
 							<v-spacer></v-spacer>
-							<v-btn color="success" href="{{url($post->slug)}}">Go</v-btn>
+							<v-btn color="success" href="{{url($type .'/'. $post->slug)}}">Go</v-btn>
 						</v-card-actions>
 					</v-card>
 				@elseif($type->layout_style == 'Square with Preview')
 
 					<post-preview
-						href="/{{$post->slug}}"
+						href="{{url($type->slug .'/'. $post->slug)}}"
 						headline="{{$post->title}}"
 						overlay-color="{{$setting->header_color}}"
 					>
