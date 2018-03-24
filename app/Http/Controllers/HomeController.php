@@ -12,6 +12,10 @@ class HomeController extends Controller
 	public function index(){
 		return redirect('/dashboard');
 	}
+
+	public function auth(){
+		return Auth::user();
+	}
 	
 	public function editCurrentUser(Request $request)
 	{

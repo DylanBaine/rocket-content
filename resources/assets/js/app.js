@@ -35,9 +35,13 @@ const app = new Vue({
 				typeOptions: '',
 				selected: false,
 				headerColor: '',
+				auth: '',
 		},
 		mounted(){
-				this.getTypeOptions();
+				this.getAuth();
+				if(this.auth){
+					this.getTypeOptions();
+				}
 		},
 		computed: {
 				postSlug: function(){
@@ -45,6 +49,9 @@ const app = new Vue({
 				}
 		},
 		methods: {
+			getAuth: function(){
+				axios.get('/authentication').then(res=>this.auth = res.data);
+			},
 			showPhotos: function(){
 				this.showingSubscribers = false;
 				this.showingPhotos ? this.showingPhotos = false : this.showingPhotos = true;

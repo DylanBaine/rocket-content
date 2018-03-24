@@ -12,6 +12,8 @@ Route::put('edit-current-user', 'HomeController@editCurrentUser')->name('user.ed
 
 Route::put('edit-settings', 'HomeController@editSettings')->name('settings.edit')->middleware('auth');
 
+Route::get('authentication', 'HomeController@auth');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

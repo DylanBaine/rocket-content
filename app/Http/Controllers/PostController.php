@@ -65,7 +65,7 @@ class PostController extends Controller
     public function page($type, $page)
     {
         $type = Type::where('slug', $type)->first();
-        $post = Post::where('slug', $page)->first();
+        $post = Post::where('type', $type->slug)->where('slug', $page)->first();
         $post->times_visited += 1;
         $post->save();
         return view('posts.show', compact('post'));
