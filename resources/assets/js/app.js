@@ -48,12 +48,12 @@ const app = new Vue({
     }
   },
   computed: {
-    postSlug: function() {
+    postSlug: function () {
       return Slug(this.postName);
     }
   },
   watch: {
-    user: function() {
+    user: function () {
       if (this.user) {
         this.getTypeOptions();
       }
@@ -114,7 +114,7 @@ const app = new Vue({
   }
 });
 
-$(document).ready(function() {
+$(document).ready(function () {
   tinymce.init({
     selector: "#builder",
     content_css: ["/css/app.css"],
@@ -134,13 +134,13 @@ $(document).ready(function() {
       "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",
     toolbar2: "print preview media | forecolor backcolor emoticons",
     image_advtab: true,
-    file_picker_callback: function(callback, value, meta) {
+    file_picker_callback: function (callback, value, meta) {
       if (meta.filetype == "image") {
         $("#upload").trigger("click");
-        $("#upload").on("change", function() {
+        $("#upload").on("change", function () {
           var file = this.files[0];
           var reader = new FileReader();
-          reader.onload = function(e) {
+          reader.onload = function (e) {
             callback(e.target.result, {
               alt: ""
             });
@@ -152,14 +152,18 @@ $(document).ready(function() {
 
     templates: [
       {
+        title: "Container",
+        content: '<br><div class="container grid-list-md"><p></p></div>'
+      },
+      {
         title: "Two Columns",
         content:
-          '<br><div class="container grid-list-md"><div class="layout row wrap"><div class="xs6 flex display-flex align-center justify-center"><div><h2>Heading</h2><p>Text</p></div></div><div class="xs6 flex display-flex align-center justify-center"><div><h2>Heading</h2><p>Text</p></div></div></div><br></div><br>'
+          '<br><div class="layout row wrap"><div class="md6 xs12 flex display-flex align-center justify-center"><div><h2>Heading</h2><p>Text</p></div></div><div class="md6 xs12 flex display-flex align-center justify-center"><div><h2>Heading</h2><p>Text</p></div></div></div><br>'
       },
       {
         title: "Three Column",
         content:
-          '<div class="container grid-list-md"><div class="layout row wrap"><div class="md4 flex display-flex align-center justify-center"><div><h2>Heading</h2><p>Text</p></div></div><div class="md4 flex display-flex align-center justify-center"><div><h2>Heading</h2><p>Text</p></div></div><div class="md4 flex display-flex align-center justify-center"><div><h2>Heading</h2><p>Text</p></div></div></div></div>'
+          '<div class="layout row wrap"><div class="md4 flex display-flex align-center justify-center"><div><h2>Heading</h2><p>Text</p></div></div><div class="md4 flex display-flex align-center justify-center"><div><h2>Heading</h2><p>Text</p></div></div><div class="md4 flex display-flex align-center justify-center"><div><h2>Heading</h2><p>Text</p></div></div></div>'
       },
       {
         title: "Card",
@@ -184,7 +188,7 @@ $(document).ready(function() {
   });
 });
 
-$(document).ready(function() {
+$(document).ready(function () {
   tinymce.init({
     selector: "#emailContent",
     content_style:
@@ -203,13 +207,13 @@ $(document).ready(function() {
       "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",
     toolbar2: "print preview media | forecolor backcolor emoticons",
     image_advtab: true,
-    file_picker_callback: function(callback, value, meta) {
+    file_picker_callback: function (callback, value, meta) {
       if (meta.filetype == "image") {
         $("#upload").trigger("click");
-        $("#upload").on("change", function() {
+        $("#upload").on("change", function () {
           var file = this.files[0];
           var reader = new FileReader();
-          reader.onload = function(e) {
+          reader.onload = function (e) {
             callback(e.target.result, {
               alt: ""
             });
