@@ -61,6 +61,8 @@
 		height: 100%;
 		opacity: .7;
 		z-index: 9;
+    top: 0;
+    background: black;
 	}
 
 	.preview{

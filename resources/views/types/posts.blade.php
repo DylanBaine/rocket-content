@@ -22,12 +22,10 @@
 						</v-card-actions>
 					</v-card>
 				@elseif($type->layout_style == 'Square with Preview')
-
 					<post-preview
 						href="{{url($type->slug .'/'. $post->slug)}}"
 						headline="{{$post->title}}"
-						overlay-color="{{$setting->header_color}}"
-					>
+						overlay-color="{{$setting->header_color}}">
 						{!!$post->content!!}
 					</post-preview>
 

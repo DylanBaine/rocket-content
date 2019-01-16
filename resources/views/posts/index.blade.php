@@ -29,13 +29,13 @@
 			<div class="room-top">
 				@foreach($posts as $post)
 					<v-card class="hidden post-preview type-{{$post->type}}" href="{{route('posts.edit', $post->id)}}">
-		            	<v-layout style="height: 350px; overflow: hidden;" row wrap>
-							<v-flex style="border-right: 1px solid black" class="text-xs-center display-flex justify-center align-center" md1>{{$post->title}}</v-flex>
-							<v-flex style="border-right: 1px solid black" class="text-xs-center display-flex justify-center align-center" md1>{{$post->type}}</v-flex>
-							<v-flex md10>{!! $post->content !!}</v-flex>
-		            	</v-layout>
-		            </v-card>
-		            <br>
+            <v-layout style="height: 350px; overflow: hidden;" row wrap>
+              <v-flex style="border-right: 1px solid black" class="text-xs-center display-flex justify-center align-center" md1>{{$post->title}}</v-flex>
+              <v-flex style="border-right: 1px solid black" class="text-xs-center display-flex justify-center align-center" md1>{{$post->type}}</v-flex>
+              <v-flex md10>{!! $post->content !!}</v-flex>
+            </v-layout>
+          </v-card>
+		      <br>
 				@endforeach				
 			</div>
 	</v-container>
