@@ -35,7 +35,7 @@
                 <modal-container v-if="alert.showing">
                     <v-alert :type="alert.type" :value="true" dissmissable>@{{alert.message}}</v-alert>
                 </modal-container>
-            <div style="margin-top: 48px;">
+            <div style="margin-top: 48px; min-height: 80vh;">
                 @yield('content')
             </div>
             {!!$setting->footer!!}
