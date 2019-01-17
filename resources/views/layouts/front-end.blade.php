@@ -8,6 +8,8 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
+    <meta name="turbolinks-cache-control" content="no-cache">
+
     <title>{{$setting->title}}</title>   
 
     <link rel="icon"
@@ -18,9 +20,10 @@
     <script src="{{url('/js/turbolinks.js')}}"></script>
 </head>
 <body>
+  <div id="body_load"></div>
     <div id="app">
         <v-app v-cloak>
-                <front-end-menu @if($setting->icon_in_top_left) icon="{{$setting->icon}}" @endif top-left="{{$setting->menu_text}}" background-color="{{$setting->header_color}}"></front-end-menu>
+                <front-end-menu @if($setting->icon_in_top_left) icon="{{$setting->icon}}" @endif top-left="{{$setting->menu_text}}" background-color="{{$setting->header_color??'black'}}"></front-end-menu>
                 <modal-container v-if="showingPhotos || showingSubscribers" class="modal-container">
                     <manage-photos v-if="showingPhotos"></manage-photos>
                     <subscribers v-if="showingSubscribers"></subscribers>

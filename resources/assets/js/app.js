@@ -19,7 +19,13 @@ Vue.component("modal-container", require("./components/ModalContainer.vue"));
 Vue.component("front-end-menu", require("./components/FrontEndNav.vue"));
 Vue.component("color-picker", Picker.Chrome);
 Vue.component("post-preview", require("./components/SquareWithPreview.vue"));
+if (!Turbolinks) {
+  $('body').css('opacity', 1);
+}
 document.addEventListener('turbolinks:load', () => {
+  setTimeout(() => {
+    $('body').css('opacity', 1);
+  }, 300);
   const app = new Vue({
     el: "#app",
     data: {

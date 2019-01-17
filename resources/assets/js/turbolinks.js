@@ -1,2 +1,2 @@
-var Turbolinks = require("turbolinks");
+window.Turbolinks = require("turbolinks");
 Turbolinks.start();

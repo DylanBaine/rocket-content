@@ -12,10 +12,19 @@
 	display: none;
 }
 
+#app{
+  background-color: #e6e8ec;
+}
 body{
+  min-height: 100vh;
+  background-image: url(https://i.pinimg.com/originals/49/8f/77/498f7727ecf2a588d6c3eebac92a7c4b.gif);
+  background-position: center;
+  background-color: #e6e8ec;
 	font-family: Raleway;
 	font-weight: 400;
-	overflow-x: hidden;
+  overflow-x: hidden;
+  transition: all .5s;
+  opacity: 0;
 }
 
 img{

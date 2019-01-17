@@ -11,18 +11,18 @@
 	</div>
 	<div class="hidden-md-and-up" style="height: 100%;">
 	    <v-toolbar-items>
-	    	<v-btn @click="showNav" icon flat><v-icon>{{showingNav ? 'cancel' : 'menu'}}</v-icon></v-btn>
+        <v-icon @click="showNav">{{showingNav ? 'close' : 'menu'}}</v-icon>
 	    </v-toolbar-items>
 	</div>
 	<transition name="slide-x-transition">
-		<div :style="'top: 0; width: 100%; height: 100vh; background-color:'+backgroundColor+'; overflow: auto;'" class="pos-fixed dark display-flex align-center" v-show="showingNav">
-			<div style="width: 100%">
-				<v-btn class="pos-absolute top right" @click="showNav" icon flat><v-icon>{{showingNav ? 'cancel' : 'menu'}}</v-icon></v-btn>
-		        <template v-for="item in items">
-		        	<v-btn block :ripple="false" :href="item.name ? '/browse/'+item.slug : '/' + item.slug" flat>{{item.name}}{{item.title}}</v-btn>
-		        	<hr>
-		        </template>
-		    </div>		
+		<div :style="'top: 48px; width: 100%; height: 100vh; left: 0; background-color:'+backgroundColor+'; overflow: auto;'" class="pos-fixed dark display-flex align-center" v-show="showingNav">
+			<div style="width: 100%; position: relative; top: -50px;">
+        <template v-for="(item, i) in items">
+          <hr v-if="!i">
+          <v-btn block flat :ripple="false" :href="item.name ? '/'+item.slug : '/' + item.slug" flat>{{item.name}}{{item.title}}</v-btn>
+          <hr>
+        </template>
+		  </div>		
 		</div>
 	</transition>
 </v-toolbar>
