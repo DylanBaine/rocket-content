@@ -13,16 +13,9 @@
     <link rel="icon"
         type="image/png" 
         href="{{$setting->icon}}">
-
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-
-    <script>
-      UPLOADCARE_LOCALE = "en";
-      UPLOADCARE_TABS = "file url facebook gdrive gphotos dropbox instagram evernote flickr skydrive";
-      UPLOADCARE_PUBLIC_KEY = "d40a44beaab270cc4a69";
-    </script>
-    <script charset="utf-8" src="//ucarecdn.com/libs/widget/3.2.2/uploadcare.full.min.js"></script>
+    <script src="{{url('/js/turbolinks.js')}}"></script>
 </head>
 <body>
     <div id="app">

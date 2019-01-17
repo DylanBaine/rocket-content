@@ -3,7 +3,8 @@ require("./bootstrap");
 import Vue from "vue";
 import Vuetify from "vuetify";
 import Picker from "vue-color";
-
+import TurbolinksAdapter from 'vue-turbolinks';
+Vue.use(TurbolinksAdapter)
 Vue.use(Vuetify);
 
 //Vue.component('example-component', require('./components/ExampleComponent.vue'));
@@ -18,100 +19,101 @@ Vue.component("modal-container", require("./components/ModalContainer.vue"));
 Vue.component("front-end-menu", require("./components/FrontEndNav.vue"));
 Vue.component("color-picker", Picker.Chrome);
 Vue.component("post-preview", require("./components/SquareWithPreview.vue"));
-
-const app = new Vue({
-  el: "#app",
-  data: {
-    token: document
-      .querySelector('meta[name="csrf-token"]')
-      .getAttribute("content"),
-    showingPhotos: false,
-    showingSubscribers: false,
-    showingTypes: false,
-    alert: {
-      showing: false,
-      type: "success",
-      message: "No Alert Yet!"
+document.addEventListener('turbolinks:load', () => {
+  const app = new Vue({
+    el: "#app",
+    data: {
+      token: document
+        .querySelector('meta[name="csrf-token"]')
+        .getAttribute("content"),
+      showingPhotos: false,
+      showingSubscribers: false,
+      showingTypes: false,
+      alert: {
+        showing: false,
+        type: "success",
+        message: "No Alert Yet!"
+      },
+      postName: "",
+      postType: "",
+      postActive: true,
+      typeOptions: "",
+      selected: false,
+      headerColor: "",
+      user: ""
     },
-    postName: "",
-    postType: "",
-    postActive: true,
-    typeOptions: "",
-    selected: false,
-    headerColor: "",
-    user: ""
-  },
-  mounted() {
-    this.getAuth();
-    if (this.auth) {
-      this.getTypeOptions();
-    }
-  },
-  computed: {
-    postSlug: function () {
-      return Slug(this.postName);
-    }
-  },
-  watch: {
-    user: function () {
-      if (this.user) {
+    mounted() {
+      this.getAuth();
+      if (this.auth) {
         this.getTypeOptions();
       }
-    }
-  },
-  methods: {
-    getAuth() {
-      axios.get("/authentication").then(res => (this.user = res.data));
     },
-    showPhotos() {
-      this.showingSubscribers = false;
-      this.showingPhotos
-        ? (this.showingPhotos = false)
-        : (this.showingPhotos = true);
+    computed: {
+      postSlug: function () {
+        return Slug(this.postName);
+      }
     },
-    showSubscribers() {
-      this.showingPhotos = false;
-      this.showingSubscribers
-        ? (this.showingSubscribers = false)
-        : (this.showingSubscribers = true);
+    watch: {
+      user: function () {
+        if (this.user) {
+          this.getTypeOptions();
+        }
+      }
     },
-    showTypes() {
-      this.showingTypes
-        ? (this.showingTypes = false)
-        : (this.showingTypes = true);
-    },
-    pluckType(slug) {
-      this.selected = true;
-      var element = $("." + slug);
+    methods: {
+      getAuth() {
+        axios.get("/authentication").then(res => (this.user = res.data));
+      },
+      showPhotos() {
+        this.showingSubscribers = false;
+        this.showingPhotos
+          ? (this.showingPhotos = false)
+          : (this.showingPhotos = true);
+      },
+      showSubscribers() {
+        this.showingPhotos = false;
+        this.showingSubscribers
+          ? (this.showingSubscribers = false)
+          : (this.showingSubscribers = true);
+      },
+      showTypes() {
+        this.showingTypes
+          ? (this.showingTypes = false)
+          : (this.showingTypes = true);
+      },
+      pluckType(slug) {
+        this.selected = true;
+        var element = $("." + slug);
 
-      element.hasClass("hidden")
-        ? element.removeClass("hidden")
-        : element.addClass("hidden");
+        element.hasClass("hidden")
+          ? element.removeClass("hidden")
+          : element.addClass("hidden");
 
-      console.log(element);
-    },
-    closeModal() {
-      this.showingPhotos = false;
-      this.showingSubscribers = false;
-      this.showingTypes = false;
-      this.alert.showing = false;
-    },
-    getTypeOptions() {
-      axios
-        .get("/component-api/post-types")
-        .then(res => (this.typeOptions = res.data));
-    },
-    patience() {
-      this.alert.showing = true;
-      this.alert.type = "success";
-      this.alert.message = "Sending off the emails! (this may take a while)";
-    },
-    popup(type, message) {
-      this.alert.showing = true;
-      this.alert.type = type;
-      this.alert.message = message;
+        console.log(element);
+      },
+      closeModal() {
+        this.showingPhotos = false;
+        this.showingSubscribers = false;
+        this.showingTypes = false;
+        this.alert.showing = false;
+      },
+      getTypeOptions() {
+        axios
+          .get("/component-api/post-types")
+          .then(res => (this.typeOptions = res.data));
+      },
+      patience() {
+        this.alert.showing = true;
+        this.alert.type = "success";
+        this.alert.message = "Sending off the emails! (this may take a while)";
+      },
+      popup(type, message) {
+        this.alert.showing = true;
+        this.alert.type = type;
+        this.alert.message = message;
+      }
     }
-  }
+  });
 });
 
 $(document).ready(function () {
