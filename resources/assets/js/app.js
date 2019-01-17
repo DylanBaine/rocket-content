@@ -120,9 +120,7 @@ document.addEventListener('turbolinks:load', () => {
       }
     }
   });
-});
 
-$(document).ready(function () {
   tinymce.init({
     selector: "#builder",
     content_css: ["/css/app.css"],
@@ -194,9 +192,6 @@ $(document).ready(function () {
       }
     ]
   });
-});
-
-$(document).ready(function () {
   tinymce.init({
     selector: "#emailContent",
     content_style:
@@ -232,3 +227,5 @@ $(document).ready(function () {
     }
   });
 });
+
+
